@@ -1,0 +1,24 @@
+
+;<Program title>
+
+jmp start
+
+;data
+
+
+;code
+start: nop
+LXI H, 6200H
+LXI D, 6100
+LXI B, 7000H
+BACK: LDAX D
+MOV L, A
+MOV A, M
+STAX B
+INX D
+INX B
+MOV A,C
+CPI 05H
+JNZ BACK
+
+hlt
